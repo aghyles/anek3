@@ -1,0 +1,73 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="nageurs">
+            <h2><span jhiTranslate="t04JhApp.nageurs.detail.title">Nageurs</span> {{nageurs.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="t04JhApp.nageurs.licenceNum">Licence Num</span></dt>
+                <dd>
+                    <span>{{nageurs.licenceNum}}</span>
+                </dd>
+                <dt><span jhiTranslate="t04JhApp.nageurs.groupeName">Groupe Name</span></dt>
+                <dd>
+                    <span>{{nageurs.groupeName}}</span>
+                </dd>
+                <dt><span jhiTranslate="t04JhApp.nageurs.document">Document</span></dt>
+                <dd>
+                    <span>{{nageurs.document}}</span>
+                </dd>
+                <dt><span jhiTranslate="t04JhApp.nageurs.firstName">First Name</span></dt>
+                <dd>
+                    <span>{{nageurs.firstName}}</span>
+                </dd>
+                <dt><span jhiTranslate="t04JhApp.nageurs.lastName">Last Name</span></dt>
+                <dd>
+                    <span>{{nageurs.lastName}}</span>
+                </dd>
+                <dt><span jhiTranslate="t04JhApp.nageurs.sexe">Sexe</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'t04JhApp.Sexe.' + nageurs.sexe}}">{{nageurs.sexe}}</span>
+                </dd>
+                <dt><span jhiTranslate="t04JhApp.nageurs.bearthday">Bearthday</span></dt>
+                <dd>
+                    <span>{{nageurs.bearthday}}</span>
+                </dd>
+                <dt><span jhiTranslate="t04JhApp.nageurs.phoneNumber">Phone Number</span></dt>
+                <dd>
+                    <span>{{nageurs.phoneNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="t04JhApp.nageurs.eMail">E Mail</span></dt>
+                <dd>
+                    <span>{{nageurs.eMail}}</span>
+                </dd>
+                <dt><span jhiTranslate="t04JhApp.nageurs.address">Address</span></dt>
+                <dd>
+                    <span>{{nageurs.address}}</span>
+                </dd>
+                <dt><span jhiTranslate="t04JhApp.nageurs.studyTime">Study Time</span></dt>
+                <dd>
+                    <span>{{nageurs.studyTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="t04JhApp.nageurs.groupe">Groupe</span></dt>
+                <dd>
+                    <div *ngIf="nageurs.groupe">
+                        <a [routerLink]="['/groupe', nageurs.groupe?.id, 'view']">{{nageurs.groupe?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/nageurs', nageurs.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

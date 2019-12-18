@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity TestPerformance.
+    -->
+    <changeSet id="20191218024638-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="test_autre_id"
+                                 baseTableName="test_performance"
+                                 constraintName="fk_test_performance_test_autre_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="test_autre"/>
+
+        <addForeignKeyConstraint baseColumnNames="test_etude_id"
+                                 baseTableName="test_performance"
+                                 constraintName="fk_test_performance_test_etude_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="test_etude"/>
+
+        <addForeignKeyConstraint baseColumnNames="test_nage_id"
+                                 baseTableName="test_performance"
+                                 constraintName="fk_test_performance_test_nage_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="test_nage"/>
+
+        <addForeignKeyConstraint baseColumnNames="document_id"
+                                 baseTableName="test_performance"
+                                 constraintName="fk_test_performance_document_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="document"/>
+
+        <addForeignKeyConstraint baseColumnNames="test_physique_id"
+                                 baseTableName="test_performance"
+                                 constraintName="fk_test_performance_test_physique_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="test_physique"/>
+
+        <addForeignKeyConstraint baseColumnNames="nageurs_id"
+                                 baseTableName="test_performance"
+                                 constraintName="fk_test_performance_nageurs_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="nageurs"/>
+
+    </changeSet>
+</databaseChangeLog>

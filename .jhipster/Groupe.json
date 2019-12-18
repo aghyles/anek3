@@ -1,0 +1,60 @@
+{
+    "name": "Groupe",
+    "fields": [
+        {
+            "fieldName": "groupeName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "startDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "endDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "saison",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "category",
+            "fieldType": "Category",
+            "fieldValues": "BEBE,POUSIN,BENJAMIN,MINIME,JUNIOR,SENIOR,MASTER"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "nageurs",
+            "otherEntityRelationshipName": "groupe",
+            "relationshipName": "nageurs"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "ficheSeance",
+            "otherEntityRelationshipName": "groupe",
+            "relationshipName": "ficheSeance"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "programmation",
+            "otherEntityRelationshipName": "groupe",
+            "relationshipName": "programmation"
+        }
+    ],
+    "changelogDate": "20191218024634",
+    "javadoc": "si ya changement d'entraineur il faut cree un nouveau groupe",
+    "entityTableName": "groupe",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

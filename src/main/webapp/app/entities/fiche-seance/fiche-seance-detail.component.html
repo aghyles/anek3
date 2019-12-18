@@ -1,0 +1,129 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="ficheSeance">
+            <h2><span jhiTranslate="t04JhApp.ficheSeance.detail.title">Fiche Seance</span> {{ficheSeance.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="t04JhApp.ficheSeance.ficheSeance">Fiche Seance</span></dt>
+                <dd>
+                    <span>{{ficheSeance.ficheSeance}}</span>
+                </dd>
+                <dt><span jhiTranslate="t04JhApp.ficheSeance.groupeName">Groupe Name</span></dt>
+                <dd>
+                    <span>{{ficheSeance.groupeName}}</span>
+                </dd>
+                <dt><span jhiTranslate="t04JhApp.ficheSeance.date">Date</span></dt>
+                <dd>
+                    <span>{{ficheSeance.date}}</span>
+                </dd>
+                <dt><span jhiTranslate="t04JhApp.ficheSeance.themePrimary">Theme Primary</span></dt>
+                <dd>
+                    <span>{{ficheSeance.themePrimary}}</span>
+                </dd>
+                <dt><span jhiTranslate="t04JhApp.ficheSeance.themeSecondary">Theme Secondary</span></dt>
+                <dd>
+                    <span>{{ficheSeance.themeSecondary}}</span>
+                </dd>
+                <dt><span jhiTranslate="t04JhApp.ficheSeance.objectifPrimary">Objectif Primary</span></dt>
+                <dd>
+                    <span>{{ficheSeance.objectifPrimary}}</span>
+                </dd>
+                <dt><span jhiTranslate="t04JhApp.ficheSeance.objectifSecondary">Objectif Secondary</span></dt>
+                <dd>
+                    <span>{{ficheSeance.objectifSecondary}}</span>
+                </dd>
+                <dt><span jhiTranslate="t04JhApp.ficheSeance.observation">Observation</span></dt>
+                <dd>
+                    <span>{{ficheSeance.observation}}</span>
+                </dd>
+                <dt><span jhiTranslate="t04JhApp.ficheSeance.exerciceEchauffement1">Exercice Echauffement 1</span></dt>
+                <dd>
+                    <span>{{ficheSeance.exerciceEchauffement1}}</span>
+                </dd>
+                <dt><span jhiTranslate="t04JhApp.ficheSeance.exerciceEchauffement2">Exercice Echauffement 2</span></dt>
+                <dd>
+                    <span>{{ficheSeance.exerciceEchauffement2}}</span>
+                </dd>
+                <dt><span jhiTranslate="t04JhApp.ficheSeance.exerciceEchauffement3">Exercice Echauffement 3</span></dt>
+                <dd>
+                    <span>{{ficheSeance.exerciceEchauffement3}}</span>
+                </dd>
+                <dt><span jhiTranslate="t04JhApp.ficheSeance.exercicePrimary1">Exercice Primary 1</span></dt>
+                <dd>
+                    <span>{{ficheSeance.exercicePrimary1}}</span>
+                </dd>
+                <dt><span jhiTranslate="t04JhApp.ficheSeance.exercicePrimary2">Exercice Primary 2</span></dt>
+                <dd>
+                    <span>{{ficheSeance.exercicePrimary2}}</span>
+                </dd>
+                <dt><span jhiTranslate="t04JhApp.ficheSeance.exercicePrimary3">Exercice Primary 3</span></dt>
+                <dd>
+                    <span>{{ficheSeance.exercicePrimary3}}</span>
+                </dd>
+                <dt><span jhiTranslate="t04JhApp.ficheSeance.exercicePrimary4">Exercice Primary 4</span></dt>
+                <dd>
+                    <span>{{ficheSeance.exercicePrimary4}}</span>
+                </dd>
+                <dt><span jhiTranslate="t04JhApp.ficheSeance.exercicePrimary5">Exercice Primary 5</span></dt>
+                <dd>
+                    <span>{{ficheSeance.exercicePrimary5}}</span>
+                </dd>
+                <dt><span jhiTranslate="t04JhApp.ficheSeance.exercicePrimary6">Exercice Primary 6</span></dt>
+                <dd>
+                    <span>{{ficheSeance.exercicePrimary6}}</span>
+                </dd>
+                <dt><span jhiTranslate="t04JhApp.ficheSeance.exercicePrimary7">Exercice Primary 7</span></dt>
+                <dd>
+                    <span>{{ficheSeance.exercicePrimary7}}</span>
+                </dd>
+                <dt><span jhiTranslate="t04JhApp.ficheSeance.exercicePrimary8">Exercice Primary 8</span></dt>
+                <dd>
+                    <span>{{ficheSeance.exercicePrimary8}}</span>
+                </dd>
+                <dt><span jhiTranslate="t04JhApp.ficheSeance.exerciceFinale1">Exercice Finale 1</span></dt>
+                <dd>
+                    <span>{{ficheSeance.exerciceFinale1}}</span>
+                </dd>
+                <dt><span jhiTranslate="t04JhApp.ficheSeance.exerciceFinale2">Exercice Finale 2</span></dt>
+                <dd>
+                    <span>{{ficheSeance.exerciceFinale2}}</span>
+                </dd>
+                <dt><span jhiTranslate="t04JhApp.ficheSeance.bilan">Bilan</span></dt>
+                <dd>
+                    <span>{{ficheSeance.bilan}}</span>
+                </dd>
+                <dt><span jhiTranslate="t04JhApp.ficheSeance.presence">Presence</span></dt>
+                <dd>
+                    <span *ngFor="let presence of ficheSeance.presences; let last = last">
+                        <a [routerLink]="['/presence', presence?.id, 'view' ]">{{presence.title}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+                <dt><span jhiTranslate="t04JhApp.ficheSeance.location">Location</span></dt>
+                <dd>
+                    <span *ngFor="let location of ficheSeance.locations; let last = last">
+                        <a [routerLink]="['/theme', location?.id, 'view' ]">{{location.id}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+                <dt><span jhiTranslate="t04JhApp.ficheSeance.groupe">Groupe</span></dt>
+                <dd>
+                    <div *ngIf="ficheSeance.groupe">
+                        <a [routerLink]="['/groupe', ficheSeance.groupe?.id, 'view']">{{ficheSeance.groupe?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/fiche-seance', ficheSeance.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+{
+  "t04JhApp": {
+    "testPerformance": {
+      "home": {
+        "title": "TestPerformances",
+        "createLabel": "Créer un nouveau Test Performance",
+        "createOrEditLabel": "Créer ou éditer un Test Performance",
+        "notFound": "Aucun Test Performance trouvé"
+      },
+      "created": "Un nouveau Test Performance a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Test Performance avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Test Performance avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Test Performance {{ id }} ?"
+      },
+      "detail": {
+        "title": "Test Performance"
+      },
+      "typeTest": "Type Test",
+      "date": "Date",
+      "idphotos": "Idphotos",
+      "idtestDoc": "Idtest Doc",
+      "testAutre": "Test Autre",
+      "testEtude": "Test Etude",
+      "testNage": "Test Nage",
+      "document": "Document",
+      "testPhysique": "Test Physique",
+      "nageurs": "Nageurs"
+    }
+  }
+}

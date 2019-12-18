@@ -1,0 +1,180 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-fiche-seance-heading" jhiTranslate="t04JhApp.ficheSeance.home.createOrEditLabel">Create or edit a Fiche Seance</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.ficheSeance.ficheSeance" for="field_ficheSeance">Fiche Seance</label>
+                    <input type="number" class="form-control" name="ficheSeance" id="field_ficheSeance"
+                           formControlName="ficheSeance"/>
+                    <div *ngIf="editForm.get('ficheSeance').invalid && (editForm.get('ficheSeance').dirty || editForm.get('ficheSeance').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('ficheSeance').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('ficheSeance')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.ficheSeance.groupeName" for="field_groupeName">Groupe Name</label>
+                    <input type="text" class="form-control" name="groupeName" id="field_groupeName"
+                           formControlName="groupeName"/>
+                    <div *ngIf="editForm.get('groupeName').invalid && (editForm.get('groupeName').dirty || editForm.get('groupeName').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('groupeName').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.ficheSeance.date" for="field_date">Date</label>
+                    <div class="d-flex">
+                        <input id="field_date" type="datetime-local" class="form-control" name="date" formControlName="date" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                    <div *ngIf="editForm.get('date').invalid && (editForm.get('date').dirty || editForm.get('date').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('date').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('date').errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.ficheSeance.themePrimary" for="field_themePrimary">Theme Primary</label>
+                    <input type="text" class="form-control" name="themePrimary" id="field_themePrimary"
+                           formControlName="themePrimary"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.ficheSeance.themeSecondary" for="field_themeSecondary">Theme Secondary</label>
+                    <input type="text" class="form-control" name="themeSecondary" id="field_themeSecondary"
+                           formControlName="themeSecondary"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.ficheSeance.objectifPrimary" for="field_objectifPrimary">Objectif Primary</label>
+                    <input type="text" class="form-control" name="objectifPrimary" id="field_objectifPrimary"
+                           formControlName="objectifPrimary"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.ficheSeance.objectifSecondary" for="field_objectifSecondary">Objectif Secondary</label>
+                    <input type="text" class="form-control" name="objectifSecondary" id="field_objectifSecondary"
+                           formControlName="objectifSecondary"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.ficheSeance.observation" for="field_observation">Observation</label>
+                    <input type="text" class="form-control" name="observation" id="field_observation"
+                           formControlName="observation"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.ficheSeance.exerciceEchauffement1" for="field_exerciceEchauffement1">Exercice Echauffement 1</label>
+                    <input type="text" class="form-control" name="exerciceEchauffement1" id="field_exerciceEchauffement1"
+                           formControlName="exerciceEchauffement1"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.ficheSeance.exerciceEchauffement2" for="field_exerciceEchauffement2">Exercice Echauffement 2</label>
+                    <input type="text" class="form-control" name="exerciceEchauffement2" id="field_exerciceEchauffement2"
+                           formControlName="exerciceEchauffement2"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.ficheSeance.exerciceEchauffement3" for="field_exerciceEchauffement3">Exercice Echauffement 3</label>
+                    <input type="text" class="form-control" name="exerciceEchauffement3" id="field_exerciceEchauffement3"
+                           formControlName="exerciceEchauffement3"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.ficheSeance.exercicePrimary1" for="field_exercicePrimary1">Exercice Primary 1</label>
+                    <input type="text" class="form-control" name="exercicePrimary1" id="field_exercicePrimary1"
+                           formControlName="exercicePrimary1"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.ficheSeance.exercicePrimary2" for="field_exercicePrimary2">Exercice Primary 2</label>
+                    <input type="text" class="form-control" name="exercicePrimary2" id="field_exercicePrimary2"
+                           formControlName="exercicePrimary2"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.ficheSeance.exercicePrimary3" for="field_exercicePrimary3">Exercice Primary 3</label>
+                    <input type="text" class="form-control" name="exercicePrimary3" id="field_exercicePrimary3"
+                           formControlName="exercicePrimary3"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.ficheSeance.exercicePrimary4" for="field_exercicePrimary4">Exercice Primary 4</label>
+                    <input type="text" class="form-control" name="exercicePrimary4" id="field_exercicePrimary4"
+                           formControlName="exercicePrimary4"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.ficheSeance.exercicePrimary5" for="field_exercicePrimary5">Exercice Primary 5</label>
+                    <input type="text" class="form-control" name="exercicePrimary5" id="field_exercicePrimary5"
+                           formControlName="exercicePrimary5"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.ficheSeance.exercicePrimary6" for="field_exercicePrimary6">Exercice Primary 6</label>
+                    <input type="text" class="form-control" name="exercicePrimary6" id="field_exercicePrimary6"
+                           formControlName="exercicePrimary6"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.ficheSeance.exercicePrimary7" for="field_exercicePrimary7">Exercice Primary 7</label>
+                    <input type="text" class="form-control" name="exercicePrimary7" id="field_exercicePrimary7"
+                           formControlName="exercicePrimary7"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.ficheSeance.exercicePrimary8" for="field_exercicePrimary8">Exercice Primary 8</label>
+                    <input type="text" class="form-control" name="exercicePrimary8" id="field_exercicePrimary8"
+                           formControlName="exercicePrimary8"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.ficheSeance.exerciceFinale1" for="field_exerciceFinale1">Exercice Finale 1</label>
+                    <input type="number" class="form-control" name="exerciceFinale1" id="field_exerciceFinale1"
+                           formControlName="exerciceFinale1"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.ficheSeance.exerciceFinale2" for="field_exerciceFinale2">Exercice Finale 2</label>
+                    <input type="number" class="form-control" name="exerciceFinale2" id="field_exerciceFinale2"
+                           formControlName="exerciceFinale2"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.ficheSeance.bilan" for="field_bilan">Bilan</label>
+                    <input type="text" class="form-control" name="bilan" id="field_bilan"
+                           formControlName="bilan"/>
+                </div>
+
+                <div class="form-group">
+                    <label jhiTranslate="t04JhApp.ficheSeance.presence" for="field_presences">Presence</label>
+                    <select class="form-control" id="field_presences" multiple name="presences" formControlName="presences">
+                        <option [ngValue]="getSelected(editForm.get('presences').value, presenceOption)" *ngFor="let presenceOption of presences; trackBy: trackPresenceById">{{presenceOption.title}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label jhiTranslate="t04JhApp.ficheSeance.location" for="field_locations">Location</label>
+                    <select class="form-control" id="field_locations" multiple name="locations" formControlName="locations">
+                        <option [ngValue]="getSelected(editForm.get('locations').value, themeOption)" *ngFor="let themeOption of themes; trackBy: trackThemeById">{{themeOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.ficheSeance.groupe" for="field_groupe">Groupe</label>
+                    <select class="form-control" id="field_groupe" name="groupe" formControlName="groupe">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="groupeOption.id === editForm.get('groupe').value?.id ? editForm.get('groupe').value : groupeOption" *ngFor="let groupeOption of groupes; trackBy: trackGroupeById">{{groupeOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

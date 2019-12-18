@@ -1,0 +1,137 @@
+{
+    "name": "FicheSeance",
+    "fields": [
+        {
+            "fieldName": "ficheSeance",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "groupeName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "date",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "themePrimary",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "themeSecondary",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "objectifPrimary",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "objectifSecondary",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "observation",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "exerciceEchauffement1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "exerciceEchauffement2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "exerciceEchauffement3",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "exercicePrimary1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "exercicePrimary2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "exercicePrimary3",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "exercicePrimary4",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "exercicePrimary5",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "exercicePrimary6",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "exercicePrimary7",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "exercicePrimary8",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "exerciceFinale1",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "exerciceFinale2",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "bilan",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "presence",
+            "otherEntityRelationshipName": "nageur",
+            "relationshipName": "presence",
+            "otherEntityField": "title",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "theme",
+            "otherEntityRelationshipName": "ficheSeance",
+            "relationshipName": "location",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "groupe",
+            "otherEntityRelationshipName": "ficheSeance",
+            "relationshipName": "groupe",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191218024643",
+    "entityTableName": "fiche_seance",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,46 @@
+{
+  "t04JhApp": {
+    "ficheSeance": {
+      "home": {
+        "title": "FicheSeances",
+        "createLabel": "Créer un nouveau Fiche Seance",
+        "createOrEditLabel": "Créer ou éditer un Fiche Seance",
+        "notFound": "Aucun Fiche Seance trouvé"
+      },
+      "created": "Un nouveau Fiche Seance a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Fiche Seance avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Fiche Seance avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Fiche Seance {{ id }} ?"
+      },
+      "detail": {
+        "title": "Fiche Seance"
+      },
+      "ficheSeance": "Fiche Seance",
+      "groupeName": "Groupe Name",
+      "date": "Date",
+      "themePrimary": "Theme Primary",
+      "themeSecondary": "Theme Secondary",
+      "objectifPrimary": "Objectif Primary",
+      "objectifSecondary": "Objectif Secondary",
+      "observation": "Observation",
+      "exerciceEchauffement1": "Exercice Echauffement 1",
+      "exerciceEchauffement2": "Exercice Echauffement 2",
+      "exerciceEchauffement3": "Exercice Echauffement 3",
+      "exercicePrimary1": "Exercice Primary 1",
+      "exercicePrimary2": "Exercice Primary 2",
+      "exercicePrimary3": "Exercice Primary 3",
+      "exercicePrimary4": "Exercice Primary 4",
+      "exercicePrimary5": "Exercice Primary 5",
+      "exercicePrimary6": "Exercice Primary 6",
+      "exercicePrimary7": "Exercice Primary 7",
+      "exercicePrimary8": "Exercice Primary 8",
+      "exerciceFinale1": "Exercice Finale 1",
+      "exerciceFinale2": "Exercice Finale 2",
+      "bilan": "Bilan",
+      "presence": "Presence",
+      "location": "Location",
+      "groupe": "Groupe"
+    }
+  }
+}

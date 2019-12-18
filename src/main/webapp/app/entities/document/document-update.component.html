@@ -1,0 +1,62 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-document-heading" jhiTranslate="t04JhApp.document.home.createOrEditLabel">Create or edit a Document</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.document.docTitle" for="field_docTitle">Doc Title</label>
+                    <input type="text" class="form-control" name="docTitle" id="field_docTitle"
+                           formControlName="docTitle"/>
+                    <div *ngIf="editForm.get('docTitle').invalid && (editForm.get('docTitle').dirty || editForm.get('docTitle').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('docTitle').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.document.dateDocument" for="field_dateDocument">Date Document</label>
+                    <div class="d-flex">
+                        <input id="field_dateDocument" type="datetime-local" class="form-control" name="dateDocument" formControlName="dateDocument" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.document.linkDocument" for="field_linkDocument">Link Document</label>
+                    <input type="text" class="form-control" name="linkDocument" id="field_linkDocument"
+                           formControlName="linkDocument"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.document.typeDocument" for="field_typeDocument">Type Document</label>
+                    <select class="form-control" name="typeDocument" formControlName="typeDocument" id="field_typeDocument">
+                        <option value="PHOTOS">{{'t04JhApp.TypeDocument.PHOTOS' | translate}}</option>
+                        <option value="BIRTHACT">{{'t04JhApp.TypeDocument.BIRTHACT' | translate}}</option>
+                        <option value="TESTRESULT">{{'t04JhApp.TypeDocument.TESTRESULT' | translate}}</option>
+                        <option value="OTHER">{{'t04JhApp.TypeDocument.OTHER' | translate}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.document.nageurs" for="field_nageurs">Nageurs</label>
+                    <select class="form-control" id="field_nageurs" name="nageurs" formControlName="nageurs">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="nageursOption.id === editForm.get('nageurs').value?.id ? editForm.get('nageurs').value : nageursOption" *ngFor="let nageursOption of nageurs; trackBy: trackNageursById">{{nageursOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,93 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-test-performance-heading" jhiTranslate="t04JhApp.testPerformance.home.createOrEditLabel">Create or edit a Test Performance</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.testPerformance.typeTest" for="field_typeTest">Type Test</label>
+                    <input type="text" class="form-control" name="typeTest" id="field_typeTest"
+                           formControlName="typeTest"/>
+                    <div *ngIf="editForm.get('typeTest').invalid && (editForm.get('typeTest').dirty || editForm.get('typeTest').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('typeTest').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.testPerformance.date" for="field_date">Date</label>
+                    <div class="d-flex">
+                        <input id="field_date" type="datetime-local" class="form-control" name="date" formControlName="date" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.testPerformance.idphotos" for="field_idphotos">Idphotos</label>
+                    <input type="number" class="form-control" name="idphotos" id="field_idphotos"
+                           formControlName="idphotos"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.testPerformance.idtestDoc" for="field_idtestDoc">Idtest Doc</label>
+                    <input type="number" class="form-control" name="idtestDoc" id="field_idtestDoc"
+                           formControlName="idtestDoc"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.testPerformance.testAutre" for="field_testAutre">Test Autre</label>
+                    <select class="form-control" id="field_testAutre" name="testAutre" formControlName="testAutre">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="testAutreOption.id === editForm.get('testAutre').value?.id ? editForm.get('testAutre').value : testAutreOption" *ngFor="let testAutreOption of testautres; trackBy: trackTestAutreById">{{testAutreOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.testPerformance.testEtude" for="field_testEtude">Test Etude</label>
+                    <select class="form-control" id="field_testEtude" name="testEtude" formControlName="testEtude">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="testEtudeOption.id === editForm.get('testEtude').value?.id ? editForm.get('testEtude').value : testEtudeOption" *ngFor="let testEtudeOption of testetudes; trackBy: trackTestEtudeById">{{testEtudeOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.testPerformance.testNage" for="field_testNage">Test Nage</label>
+                    <select class="form-control" id="field_testNage" name="testNage" formControlName="testNage">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="testNageOption.id === editForm.get('testNage').value?.id ? editForm.get('testNage').value : testNageOption" *ngFor="let testNageOption of testnages; trackBy: trackTestNageById">{{testNageOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.testPerformance.document" for="field_document">Document</label>
+                    <select class="form-control" id="field_document" name="document" formControlName="document">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="documentOption.id === editForm.get('document').value?.id ? editForm.get('document').value : documentOption" *ngFor="let documentOption of documents; trackBy: trackDocumentById">{{documentOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.testPerformance.testPhysique" for="field_testPhysique">Test Physique</label>
+                    <select class="form-control" id="field_testPhysique" name="testPhysique" formControlName="testPhysique">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="testPhysiqueOption.id === editForm.get('testPhysique').value?.id ? editForm.get('testPhysique').value : testPhysiqueOption" *ngFor="let testPhysiqueOption of testphysiques; trackBy: trackTestPhysiqueById">{{testPhysiqueOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.testPerformance.nageurs" for="field_nageurs">Nageurs</label>
+                    <select class="form-control" id="field_nageurs" name="nageurs" formControlName="nageurs">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="nageursOption.id === editForm.get('nageurs').value?.id ? editForm.get('nageurs').value : nageursOption" *ngFor="let nageursOption of nageurs; trackBy: trackNageursById">{{nageursOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

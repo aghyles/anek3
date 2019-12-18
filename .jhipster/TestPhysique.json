@@ -1,0 +1,44 @@
+{
+    "name": "TestPhysique",
+    "fields": [
+        {
+            "fieldName": "testPhy1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "testPhy2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "testPhy3",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "testPhy4",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "testPhy5",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "testPerformance",
+            "otherEntityRelationshipName": "testPhysique",
+            "relationshipName": "testperformance",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20191218024642",
+    "entityTableName": "test_physique",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}
