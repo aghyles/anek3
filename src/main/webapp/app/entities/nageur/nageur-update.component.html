@@ -1,0 +1,65 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-nageur-heading" jhiTranslate="t04JhApp.nageur.home.createOrEditLabel">Create or edit a Nageur</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.nageur.licence" for="field_licence">Licence</label>
+                    <input type="text" class="form-control" name="licence" id="field_licence"
+                           formControlName="licence"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.nageur.nom" for="field_nom">Nom</label>
+                    <input type="text" class="form-control" name="nom" id="field_nom"
+                           formControlName="nom"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.nageur.prenom" for="field_prenom">Prenom</label>
+                    <input type="text" class="form-control" name="prenom" id="field_prenom"
+                           formControlName="prenom"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.nageur.date_naissance" for="field_date_naissance">Date Naissance</label>
+                    <div class="input-group">
+                        <input id="field_date_naissance" type="text" class="form-control" name="date_naissance" ngbDatepicker  #date_naissanceDp="ngbDatepicker" formControlName="date_naissance"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="date_naissanceDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.nageur.tel" for="field_tel">Tel</label>
+                    <input type="number" class="form-control" name="tel" id="field_tel"
+                           formControlName="tel"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.nageur.hauraire_etude" for="field_hauraire_etude">Hauraire Etude</label>
+                    <input type="text" class="form-control" name="hauraire_etude" id="field_hauraire_etude"
+                           formControlName="hauraire_etude"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="t04JhApp.nageur.groupes" for="field_groupes">Groupes</label>
+                    <select class="form-control" id="field_groupes" name="groupes" formControlName="groupes">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="groupesOption.id === editForm.get('groupes').value?.id ? editForm.get('groupes').value : groupesOption" *ngFor="let groupesOption of groupes; trackBy: trackGroupesById">{{groupesOption.Groupe}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
