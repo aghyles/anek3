@@ -42,8 +42,6 @@ public class CacheConfiguration {
             createCache(cm, com.popov.t04jh.domain.User.class.getName());
             createCache(cm, com.popov.t04jh.domain.Authority.class.getName());
             createCache(cm, com.popov.t04jh.domain.User.class.getName() + ".authorities");
-            createCache(cm, com.popov.t04jh.domain.Groupes.class.getName());
-            createCache(cm, com.popov.t04jh.domain.Nageur.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }
