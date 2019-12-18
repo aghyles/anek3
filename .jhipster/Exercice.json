@@ -1,0 +1,60 @@
+{
+    "name": "Exercice",
+    "fields": [
+        {
+            "fieldName": "exerciceName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "idDocSchema",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "dosage",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "longDosage",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "recomendation",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "document",
+            "otherEntityRelationshipName": "exercice",
+            "relationshipName": "document",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "objectif",
+            "otherEntityRelationshipName": "exercice",
+            "relationshipName": "objectif",
+            "otherEntityField": "id",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20191218013320",
+    "entityTableName": "exercice",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -16,8 +16,32 @@
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20191026185733_added_entity_Groupes.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20191026223827_added_entity_Nageur.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191218013306_added_entity_Groupe.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191218013307_added_entity_Nageurs.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191218013308_added_entity_MesureAnthropo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191218013309_added_entity_Document.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191218013310_added_entity_TestPerformance.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191218013311_added_entity_TestNage.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191218013312_added_entity_TestAutre.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191218013313_added_entity_TestEtude.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191218013314_added_entity_TestPhysique.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191218013315_added_entity_FicheSeance.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191218013316_added_entity_Presence.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191218013317_added_entity_Programmation.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191218013318_added_entity_Theme.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191218013319_added_entity_Objectif.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191218013320_added_entity_Exercice.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="config/liquibase/changelog/20191026185733_added_entity_constraints_Groupes.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20191026223827_added_entity_constraints_Nageur.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191218013307_added_entity_constraints_Nageurs.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191218013308_added_entity_constraints_MesureAnthropo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191218013309_added_entity_constraints_Document.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191218013310_added_entity_constraints_TestPerformance.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191218013315_added_entity_constraints_FicheSeance.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191218013317_added_entity_constraints_Programmation.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191218013318_added_entity_constraints_Theme.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191218013319_added_entity_constraints_Objectif.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191218013320_added_entity_constraints_Exercice.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

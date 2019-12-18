@@ -1,0 +1,36 @@
+{
+  "t04JhApp": {
+    "nageurs": {
+      "home": {
+        "title": "Nageurs",
+        "createLabel": "Créer un nouveau Nageurs",
+        "createOrEditLabel": "Créer ou éditer un Nageurs",
+        "notFound": "Aucun Nageurs trouvé"
+      },
+      "created": "Un nouveau Nageurs a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Nageurs avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Nageurs avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Nageurs {{ id }} ?"
+      },
+      "detail": {
+        "title": "Nageurs"
+      },
+      "licenceNum": "Licence Num",
+      "groupeName": "Groupe Name",
+      "document": "Document",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "sexe": "Sexe",
+      "bearthday": "Bearthday",
+      "phoneNumber": "Phone Number",
+      "eMail": "E Mail",
+      "address": "Address",
+      "studyTime": "Study Time",
+      "poidsTaille": "Poids Taille",
+      "testPerformance": "Test Performance",
+      "document": "Document",
+      "groupe": "Groupe"
+    }
+  }
+}

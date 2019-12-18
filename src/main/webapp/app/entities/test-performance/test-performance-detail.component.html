@@ -1,0 +1,75 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="testPerformance">
+            <h2><span jhiTranslate="t04JhApp.testPerformance.detail.title">Test Performance</span> {{testPerformance.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="t04JhApp.testPerformance.typeTest">Type Test</span></dt>
+                <dd>
+                    <span>{{testPerformance.typeTest}}</span>
+                </dd>
+                <dt><span jhiTranslate="t04JhApp.testPerformance.date">Date</span></dt>
+                <dd>
+                    <span>{{testPerformance.date}}</span>
+                </dd>
+                <dt><span jhiTranslate="t04JhApp.testPerformance.idphotos">Idphotos</span></dt>
+                <dd>
+                    <span>{{testPerformance.idphotos}}</span>
+                </dd>
+                <dt><span jhiTranslate="t04JhApp.testPerformance.idtestDoc">Idtest Doc</span></dt>
+                <dd>
+                    <span>{{testPerformance.idtestDoc}}</span>
+                </dd>
+                <dt><span jhiTranslate="t04JhApp.testPerformance.testAutre">Test Autre</span></dt>
+                <dd>
+                    <div *ngIf="testPerformance.testAutre">
+                        <a [routerLink]="['/test-autre', testPerformance.testAutre?.id, 'view']">{{testPerformance.testAutre?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="t04JhApp.testPerformance.testEtude">Test Etude</span></dt>
+                <dd>
+                    <div *ngIf="testPerformance.testEtude">
+                        <a [routerLink]="['/test-etude', testPerformance.testEtude?.id, 'view']">{{testPerformance.testEtude?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="t04JhApp.testPerformance.testNage">Test Nage</span></dt>
+                <dd>
+                    <div *ngIf="testPerformance.testNage">
+                        <a [routerLink]="['/test-nage', testPerformance.testNage?.id, 'view']">{{testPerformance.testNage?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="t04JhApp.testPerformance.document">Document</span></dt>
+                <dd>
+                    <div *ngIf="testPerformance.document">
+                        <a [routerLink]="['/document', testPerformance.document?.id, 'view']">{{testPerformance.document?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="t04JhApp.testPerformance.testPhysique">Test Physique</span></dt>
+                <dd>
+                    <div *ngIf="testPerformance.testPhysique">
+                        <a [routerLink]="['/test-physique', testPerformance.testPhysique?.id, 'view']">{{testPerformance.testPhysique?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="t04JhApp.testPerformance.nageurs">Nageurs</span></dt>
+                <dd>
+                    <div *ngIf="testPerformance.nageurs">
+                        <a [routerLink]="['/nageurs', testPerformance.nageurs?.id, 'view']">{{testPerformance.nageurs?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/test-performance', testPerformance.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

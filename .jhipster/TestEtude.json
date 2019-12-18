@@ -1,0 +1,43 @@
+{
+    "name": "TestEtude",
+    "fields": [
+        {
+            "fieldName": "testTitle",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "niveauEtude",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dateExamen",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "average",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "testPerformance",
+            "otherEntityRelationshipName": "testEtude",
+            "relationshipName": "testperformance",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20191218013313",
+    "entityTableName": "test_etude",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,43 @@
+{
+    "name": "Programmation",
+    "fields": [
+        {
+            "fieldName": "programme",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "groupe",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "theme",
+            "otherEntityRelationshipName": "programmation",
+            "relationshipName": "document",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "groupe",
+            "otherEntityRelationshipName": "programmation",
+            "relationshipName": "groupe",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191218013317",
+    "entityTableName": "programmation",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

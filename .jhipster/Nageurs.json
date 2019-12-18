@@ -1,0 +1,97 @@
+{
+    "name": "Nageurs",
+    "fields": [
+        {
+            "fieldName": "licenceNum",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "groupeName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "document",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "firstName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "lastName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "sexe",
+            "fieldType": "Sexe",
+            "fieldValues": "HOMME,FEMME,AUTRE"
+        },
+        {
+            "fieldName": "bearthday",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "phoneNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "eMail",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "pattern"
+            ],
+            "fieldValidateRulesPattern": "^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$"
+        },
+        {
+            "fieldName": "address",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "studyTime",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "mesureAnthropo",
+            "otherEntityRelationshipName": "nageurs",
+            "relationshipName": "poidsTaille"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "testPerformance",
+            "otherEntityRelationshipName": "nageurs",
+            "relationshipName": "testPerformance"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "document",
+            "otherEntityRelationshipName": "nageurs",
+            "relationshipName": "document"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "groupe",
+            "otherEntityRelationshipName": "nageurs",
+            "relationshipName": "groupe",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191218013307",
+    "entityTableName": "nageurs",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

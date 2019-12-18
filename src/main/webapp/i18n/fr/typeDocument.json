@@ -1,0 +1,11 @@
+{
+  "t04JhApp": {
+    "TypeDocument": {
+      "null": "",
+      "PHOTOS": "PHOTOS",
+      "BIRTHACT": "BIRTHACT",
+      "TESTRESULT": "TESTRESULT",
+      "OTHER": "OTHER"
+    }
+  }
+}

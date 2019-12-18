@@ -1,0 +1,59 @@
+{
+    "name": "Document",
+    "fields": [
+        {
+            "fieldName": "docTitle",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "dateDocument",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "linkDocument",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "typeDocument",
+            "fieldType": "TypeDocument",
+            "fieldValues": "PHOTOS,BIRTHACT,TESTRESULT,OTHER"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "testPerformance",
+            "otherEntityRelationshipName": "document",
+            "relationshipName": "testperformance",
+            "ownerSide": false
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "nageurs",
+            "otherEntityRelationshipName": "document",
+            "relationshipName": "nageurs",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "exercice",
+            "otherEntityRelationshipName": "document",
+            "relationshipName": "exercice",
+            "otherEntityField": "id",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20191218013309",
+    "entityTableName": "document",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

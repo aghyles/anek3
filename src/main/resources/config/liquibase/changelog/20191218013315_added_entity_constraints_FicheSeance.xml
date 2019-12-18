@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity FicheSeance.
+    -->
+    <changeSet id="20191218013315-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="fiche_seance_id"
+                                 baseTableName="fiche_seance_presence"
+                                 constraintName="fk_fiche_seance_presence_fiche_seance_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="fiche_seance"/>
+
+        <addForeignKeyConstraint baseColumnNames="presence_id"
+                                 baseTableName="fiche_seance_presence"
+                                 constraintName="fk_fiche_seance_presence_presence_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="presence"/>
+        
+        <addForeignKeyConstraint baseColumnNames="fiche_seance_id"
+                                 baseTableName="fiche_seance_location"
+                                 constraintName="fk_fiche_seance_location_fiche_seance_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="fiche_seance"/>
+
+        <addForeignKeyConstraint baseColumnNames="location_id"
+                                 baseTableName="fiche_seance_location"
+                                 constraintName="fk_fiche_seance_location_location_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="theme"/>
+        
+        <addForeignKeyConstraint baseColumnNames="groupe_id"
+                                 baseTableName="fiche_seance"
+                                 constraintName="fk_fiche_seance_groupe_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="groupe"/>
+
+    </changeSet>
+</databaseChangeLog>

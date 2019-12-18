@@ -1,0 +1,83 @@
+{
+    "name": "TestPerformance",
+    "fields": [
+        {
+            "fieldName": "typeTest",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "date",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "idphotos",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "idtestDoc",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "testAutre",
+            "otherEntityRelationshipName": "testperformance",
+            "relationshipName": "testAutre",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "testEtude",
+            "otherEntityRelationshipName": "testperformance",
+            "relationshipName": "testEtude",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "testNage",
+            "otherEntityRelationshipName": "testperformance",
+            "relationshipName": "testNage",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "document",
+            "otherEntityRelationshipName": "testperformance",
+            "relationshipName": "document",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "testPhysique",
+            "otherEntityRelationshipName": "testperformance",
+            "relationshipName": "testPhysique",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "nageurs",
+            "otherEntityRelationshipName": "testPerformance",
+            "relationshipName": "nageurs",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191218013310",
+    "entityTableName": "test_performance",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}
