@@ -1,0 +1,43 @@
+{
+    "name": "TestAutre",
+    "fields": [
+        {
+            "fieldName": "testTitle",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "typeTest",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "resultat",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "observation",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "testPerformance",
+            "otherEntityRelationshipName": "testAutre",
+            "relationshipName": "testperformance",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20191218024640",
+    "entityTableName": "test_autre",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,81 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="t04JhApp.nageurs.home.title">Nageurs</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-nageurs" [routerLink]="['/nageurs/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="t04JhApp.nageurs.home.createLabel">
+            Create a new Nageurs
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="nageurs?.length === 0">
+        <span jhiTranslate="t04JhApp.nageurs.home.notFound">No nageurs found</span>
+    </div>
+    <div class="table-responsive" *ngIf="nageurs?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="reset.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="licenceNum"><span jhiTranslate="t04JhApp.nageurs.licenceNum">Licence Num</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="groupeName"><span jhiTranslate="t04JhApp.nageurs.groupeName">Groupe Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="document"><span jhiTranslate="t04JhApp.nageurs.document">Document</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="firstName"><span jhiTranslate="t04JhApp.nageurs.firstName">First Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="lastName"><span jhiTranslate="t04JhApp.nageurs.lastName">Last Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="sexe"><span jhiTranslate="t04JhApp.nageurs.sexe">Sexe</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="bearthday"><span jhiTranslate="t04JhApp.nageurs.bearthday">Bearthday</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="phoneNumber"><span jhiTranslate="t04JhApp.nageurs.phoneNumber">Phone Number</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="eMail"><span jhiTranslate="t04JhApp.nageurs.eMail">E Mail</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="address"><span jhiTranslate="t04JhApp.nageurs.address">Address</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="studyTime"><span jhiTranslate="t04JhApp.nageurs.studyTime">Study Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="groupe.id"><span jhiTranslate="t04JhApp.nageurs.groupe">Groupe</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+            <tr *ngFor="let nageurs of nageurs ;trackBy: trackId">
+                <td><a [routerLink]="['/nageurs', nageurs.id, 'view' ]">{{nageurs.id}}</a></td>
+                <td>{{nageurs.licenceNum}}</td>
+                <td>{{nageurs.groupeName}}</td>
+                <td>{{nageurs.document}}</td>
+                <td>{{nageurs.firstName}}</td>
+                <td>{{nageurs.lastName}}</td>
+                <td jhiTranslate="{{'t04JhApp.Sexe.' + nageurs.sexe}}">{{nageurs.sexe}}</td>
+                <td>{{nageurs.bearthday | date:'medium'}}</td>
+                <td>{{nageurs.phoneNumber}}</td>
+                <td>{{nageurs.eMail}}</td>
+                <td>{{nageurs.address}}</td>
+                <td>{{nageurs.studyTime}}</td>
+                <td>
+                    <div *ngIf="nageurs.groupe">
+                        <a [routerLink]="['/groupe', nageurs.groupe?.id, 'view' ]" >{{nageurs.groupe?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/nageurs', nageurs.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/nageurs', nageurs.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(nageurs)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

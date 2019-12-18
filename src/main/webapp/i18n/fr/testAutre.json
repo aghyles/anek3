@@ -1,0 +1,26 @@
+{
+  "t04JhApp": {
+    "testAutre": {
+      "home": {
+        "title": "TestAutres",
+        "createLabel": "Créer un nouveau Test Autre",
+        "createOrEditLabel": "Créer ou éditer un Test Autre",
+        "notFound": "Aucun Test Autre trouvé"
+      },
+      "created": "Un nouveau Test Autre a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Test Autre avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Test Autre avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Test Autre {{ id }} ?"
+      },
+      "detail": {
+        "title": "Test Autre"
+      },
+      "testTitle": "Test Title",
+      "typeTest": "Type Test",
+      "resultat": "Resultat",
+      "observation": "Observation",
+      "testperformance": "Testperformance"
+    }
+  }
+}
